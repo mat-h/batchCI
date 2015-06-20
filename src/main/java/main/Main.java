@@ -5,6 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import service.IHello;
 
@@ -25,9 +26,13 @@ public class Main {
 		// TODO Auto-generated method stub
 		System.out.println("Hello, world!");
 		
-		ApplicationContext ctx = new AnnotationConfigApplicationContext(Main.class);
+		// ApplicationContext ctx = new AnnotationConfigApplicationContext(Main.class);
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("META-INF/spring/applicationContext.xml");
+		System.out.println("Configured.");
 		HelloPrinter p = ctx.getBean(HelloPrinter.class);
 		p.print();
+		DBPrinter d = ctx.getBean(DBPrinter.class);
+		d.print();
 	}
 
 }
