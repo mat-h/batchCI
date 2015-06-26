@@ -9,4 +9,5 @@
   <context:annotation-config />
   <context:component-scan base-package="main" />
   <import resource="datasource-context.xml" />
+  <import resource="elasticsearch-context.xml" />
 </beans>
