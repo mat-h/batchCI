@@ -9,12 +9,12 @@ import data.AccessLog;
 import data.dto.AccessLogDto;
 
 @Component
-public class RepositorySearcher {
+public class RepositorySearcher implements Searcher<AccessLogDto> {
 
 	@Autowired
 	private AccessLog repo;
 		
-	public AccessLogDto get(String id) {
+	public AccessLogDto search(String id) {
 		List<AccessLogDto> rs = repo.findByUidLike("5");
 		return rs.get(0);
 	}

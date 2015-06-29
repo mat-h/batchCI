@@ -14,8 +14,8 @@ public class Main {
 	public static void main(String[] args) {
 		ApplicationContext ctx = new ClassPathXmlApplicationContext("META-INF/spring/applicationContext.xml");
 
-		RepositorySearcher s = ctx.getBean(RepositorySearcher.class);
-		AccessLogDto r = s.get("");
+		Searcher<AccessLogDto> s = ctx.getBean(Searcher.class);
+		AccessLogDto r = s.search("");
 		System.out.println(r);
 	}
 
